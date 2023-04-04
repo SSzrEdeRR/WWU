@@ -3,17 +3,17 @@ graphical_culture = mecha_gnome_gfx
 color = { 83 130 163 }
 
 monarch_names = {
-	"Krebribi" = 1
-	"Itlas" = 1
-	"Ithkazz" = 1
-	"Klunlonk" = 1
-	"Klilkilik" = 1
-	"Eefoteern" = 1
-	"Ditkock" = 1
-	"Mavamkuzz" = 1
-	"Timku" = 1
-	"Muciflorn" = 1
-	"Krimoldazz" = 1
+	"Kerchunk" = 1
+	"Walton" = 1
+	"Grease" = 1
+	"Chance" = 1
+	"Milligan" = 1
+	"Piston" = 1
+	"Dashman" = 1
+	"Justin" = 1
+	"Tyler" = 1
+	"Jorrix" = 1
+	"Nico" = 1
 	"Ittlick" = 1
 	"Leethkogic" = 1
 	"Edinkak" = 1
@@ -53,14 +53,14 @@ monarch_names = {
 	"Beetlas" = 1
 	"Kramkash" = 1
 	"Klurgotla" = 1
-	"Lulbank" = -1
-	"Gledok" = -1
-	"Klerenk" = -1
-	"Sitkock" = -1
-	"Tenni" = -1
-	"Jopock" = -1
-	"Selbe" = -1
-	"Thekiklu" = -1
+	"Waren" = -1
+	"Christy" = -1
+	"Vera" = -1
+	"Niru" = -1
+	"Flux" = -1
+	"Izira" = -1
+	"Cola" = -1
+	"Lulana" = -1
 	"Klemku" = -1
 	"Thapuzz" = -1
 	"Fottluz" = -1
@@ -87,16 +87,16 @@ monarch_names = {
 }
 
 leader_names = {
-	"Battlefield"
-	"Coppernozzle"
-	"Buzzdata"
-	"Shineclue"
-	"Silvergauge"
-	"Buzzinguard"
-	"Pumpcheek"
-	"Finesteel"
-	"Fastwizzle"
-	"Shiftcollar"
+	"Enforcer KX-T57"
+	"OOX-Avenger/MG"
+	"Nullifier"
+	"Jawbreaker"
+	"Killsaw"
+	"The Kleptoboss"
+	"Rustfeather"
+	"The Rusty Prince"
+	"Claw of Life"
+	"Symmetry"
 	"Gripcount"
 	"Sparkdwadle"
 	"Temperfield"
@@ -141,27 +141,27 @@ leader_names = {
 }
 
 ship_names = {
-	"Sunshatter"
-	"Windshear"
-	"Swiftsea"
-	"Gleenshore"
-	"Greengem"
-	"Rubyshine"
-	"Quicksilver"
-    "Skylark"
-    "Whisperwind"
-    "Seaskimmer"
-    "Oceanswift"
-    "Emeraldsail"
-    "Blueshore"
-    "Silversail"
-    "Goldsail"
-    "Redshear"
+	"5-un-5-hatter"
+	"Wind-5-hear"
+	"0-cean"
+	"Gleensh-0-re"
+	"Gnomeship"
+	"R-34-GN"
+	"Ruby"
+    "Pascal"
+    "Java"
+    "Mechanizator-III"
+    "Starship"
+    "Mechaship"
+    "Seajunk"
+    "65ghl"
+    "Hu65-7"
+    "Ki11er"
 
 }
 
 army_names = {
-	"Army of $PROVINCE$"
+	"Special squad of $PROVINCE$"
 }
 
 fleet_names = {

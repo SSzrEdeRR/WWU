@@ -1,0 +1,67 @@
+namespace = wwu_arcforged
+
+#-------------------------------------------
+# Arcforged
+#-------------------------------------------
+# Mechanization
+
+country_event = {
+	id = wwu_arcgorged.1
+	title = wwu_arcgorged.1.title
+	desc = wwu_arcgorged.1.desc
+	picture = GNOMEREGAN_eventPicture
+
+    is_triggered_only = yes
+    
+	option = {
+		name = wwu_arcgorged.1.a
+		
+        add_stability = -2
+			246 = 
+				{ 
+					add_core = RBR	
+					cede_province = RBR	
+				}	
+			2705 = 
+				{ 
+					add_core = RBR	
+					cede_province = RBR	
+				}	
+			2704 = 
+				{ 
+					add_core = RBR	
+					cede_province = RBR	
+				}	
+			2708 = 
+				{ 
+					add_core = RBR	
+					cede_province = RBR	
+				}	
+		}
+	option = {
+		name = wwu_arcgorged.1.b
+		
+        add_stability = -2
+			246 = 
+				{ 
+					add_core = RBR	
+					cede_province = RBR
+				}	
+			2705 = 
+				{ 
+					add_core = RBR	
+					cede_province = RBR
+				}	
+			2704 = 
+				{ 
+					add_core = RBR	
+					cede_province = RBR	
+				}	
+			2708 = 
+				{ 
+					add_core = RBR	
+					cede_province = RBR	
+				}	
+		switch_tag = RBR
+	}
+}

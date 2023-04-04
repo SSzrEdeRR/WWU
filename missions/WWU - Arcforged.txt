@@ -1,0 +1,133 @@
+wwu_arcforge_column_1 = 
+{ 
+	slot = 1
+	generic = no
+	ai = yes
+    has_country_shield = yes
+    
+	potential = {
+		tag = ARF
+	} 
+	#RBR START WAR
+	wwu_war_rebellion_mechagnomes =
+	{
+		icon = mission_engineering
+        position = 2
+		required_missions = { wwu_ready_to_mechanization } 
+		trigger = {
+			war_with = RBR
+		}
+		effect = {
+		add_prestige = 10
+		add_country_modifier = {
+				name = "mission_arcforged_war"
+				duration = 10
+			}
+		}
+	}	 
+	#RBR NOT EXIST
+    wwu_destroy_rebellion_mechagnomes = 
+	{ 
+		icon = mission_engineering
+        position = 3
+		required_missions = { wwu_war_rebellion_mechagnomes } 
+		trigger = {
+			 OR = 
+			{
+				RBR = 
+				{ is_subject_of = ARF }
+				NOT = {exists = RBR}
+			}
+		}
+		effect = {
+		 country_event = 
+					{ 
+						id = wwu_arcgorged.2
+						days = 10
+					}	
+				}
+	}
+}
+
+wwu_arcforge_column_2 = 
+{ 
+	slot = 2
+	generic = no
+	ai = yes
+    has_country_shield = yes
+    
+	potential = {
+		tag = ARF
+	} 
+    #Start Mechanization
+    wwu_ready_to_mechanization = { 
+		icon = mission_engineering
+        	position = 1
+    
+		trigger = 
+		{
+			AND = { 
+				religion = technomancy 
+				absolutism = 50 
+			      }
+		}
+		effect = 
+		{
+			add_adm_power = 100
+			add_mil_power = 100
+			country_event = 
+					{ 
+						id = wwu_arcgorged.1
+						days = 10
+					}	
+		}
+	}
+	#Building_Mechagon
+    wwu_building_mechagon = { 
+		icon = mission_engineering
+        	position = 1
+    
+		trigger = 
+		{
+			
+		}
+		effect = 
+		{
+			
+		}
+	}
+	
+	
+}
+
+wwu_arcforge_column_4 = 
+{
+	slot = 4
+	generic = no
+	ai = yes
+    has_country_shield = yes
+    
+	potential = {
+		tag = ARF
+	} 
+	#War with troggs
+	wwu_mechagnome_island = { 
+		icon = mission_engineering
+        position = 1
+		
+		trigger = { 
+			controls = 2706
+			controls = 2707 	
+		    controls = 2708 
+		}
+		effect = 
+			{
+			add_mil_power = 100 
+			262 = 
+				{ 
+					add_permanent_claim = ROOT	
+				}	
+			}
+	}
+	
+}

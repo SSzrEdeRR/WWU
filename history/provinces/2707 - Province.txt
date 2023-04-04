@@ -4,9 +4,9 @@ owner = SRB
 controller = SRB
 add_core = SRB
 
-base_tax = 1
-base_production = 2
-base_manpower = 2
+base_tax = 3
+base_production = 3
+base_manpower = 3
 
 culture = culture_trogg
 religion = earth
