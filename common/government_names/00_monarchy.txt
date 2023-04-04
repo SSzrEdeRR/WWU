@@ -805,19 +805,19 @@ gov_mechagon = {
 	rank = {
 		1 = MECHAGON
 		2 = MECHAGON
-		3 = MECHAGON
+		3 = KINGDOM_OF_GNOMES
 	}
 	
 	ruler_male = {
 		1 = KING
         2 = KING
-        3 = KING
+        3 = GNOMES_KING
 	}
 	
 	ruler_female = {
 		1 = QUEEN
         2 = QUEEN
-        3 = QUEEN
+        3 = GNOMES_QUEEN
 	}
 	
 	trigger = {

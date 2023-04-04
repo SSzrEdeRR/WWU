@@ -1,6 +1,27 @@
 #----------------------------------------------
 # Missions
 #----------------------------------------------
+#1
 mission_arcforged_war = {
 discipline = 0.05
+}
+#2----
+mission_mechagon_tech = 
+{
+technology_cost = -0.1
+}
+#3----
+mission_mech_colonist = 
+{
+colonists = 1
+}
+#4----
+mission_arcforged_army = {
+artillery_cost = -0.1
+artillery_power = 0.1
+}
+#5----
+mission_mech_fail_mech = {
+global_missionary_strength = 0.1
+missionaries = 1
 }

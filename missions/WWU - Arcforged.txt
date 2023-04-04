@@ -1,3 +1,8 @@
+#-------------------------------
+#Arcforge Mission
+#-------------------------------
+
+#Column_1
 wwu_arcforge_column_1 = 
 { 
 	slot = 1
@@ -8,7 +13,7 @@ wwu_arcforge_column_1 =
 	potential = {
 		tag = ARF
 	} 
-	#RBR START WAR
+	#RBR START WAR(Lore root)
 	wwu_war_rebellion_mechagnomes =
 	{
 		icon = mission_engineering
@@ -25,7 +30,7 @@ wwu_arcforge_column_1 =
 			}
 		}
 	}	 
-	#RBR NOT EXIST
+	#RBR NOT EXIST(Lore root)
     wwu_destroy_rebellion_mechagnomes = 
 	{ 
 		icon = mission_engineering
@@ -49,6 +54,7 @@ wwu_arcforge_column_1 =
 	}
 }
 
+#Column_2
 wwu_arcforge_column_2 = 
 { 
 	slot = 2
@@ -59,10 +65,10 @@ wwu_arcforge_column_2 =
 	potential = {
 		tag = ARF
 	} 
-    #Start Mechanization
+    #Start Mechanization(Lore root)
     wwu_ready_to_mechanization = { 
 		icon = mission_engineering
-        	position = 1
+        position = 1
     
 		trigger = 
 		{
@@ -82,24 +88,71 @@ wwu_arcforge_column_2 =
 					}	
 		}
 	}
-	#Building_Mechagon
+	#Building_Mechagon(Lore root)
     wwu_building_mechagon = { 
 		icon = mission_engineering
-        	position = 1
-    
+        position = 2
+		required_missions = { wwu_ready_to_mechanization }
 		trigger = 
 		{
-			
+			#Machagon has 30 development
 		}
 		effect = 
 		{
-			
+			add_country_modifier = {
+				name = "mission_mechagon_tech"
+				duration = -1
+			}
 		}
 	}
 	
-	
+	#Building_Army(Lore root)
+    wwu_arcf_0 = { 
+		icon = mission_engineering
+        position = 3
+		required_missions = { wwu_building_mechagon }
+		trigger = 
+		{
+			#Machagon has 20 artillery
+		}
+		effect = 
+		{
+			 add_country_modifier = {
+				name = "mission_arcforged_army"
+				duration = -1
+			}
+		}
+	}
+	#Mechanization_Fail(Imholore root)
+	wwu_arcf_1 = {
+		icon = mission_engineering
+        position = 4
+		required_missions = { AND = { wwu_building_mechagon 
+									  wwu_destroy_rebellion_mechagnomes
+									}
+							}
+		trigger = 
+		{
+			army_size_percentage = 1
+			absolutism = 60
+			religion = technomancy
+		}
+		effect = 
+		{
+			  country_event = 
+					{ 
+						id = wwu_arcgorged.3
+						days = 10
+					}	
+		}
+	}
+		
 }
 
+#Column_3
+
+
+#Column_4
 wwu_arcforge_column_4 = 
 {
 	slot = 4
@@ -110,7 +163,7 @@ wwu_arcforge_column_4 =
 	potential = {
 		tag = ARF
 	} 
-	#War with troggs
+	#War with troggs(Side Start Root)
 	wwu_mechagnome_island = { 
 		icon = mission_engineering
         position = 1
@@ -129,5 +182,121 @@ wwu_arcforge_column_4 =
 				}	
 			}
 	}
-	
+	#Return Jaw(Kul-Tiras expansion root)
+	wwu_mechagnome_kul_0 = { 
+		icon = mission_engineering
+        position = 2
+		required_missions = { wwu_mechagnome_island }	
+		trigger = { 
+			controls = 262
+			is_core = 262
+		}
+		effect = 
+			{
+			 #Claim all island
+			}
+	}
+	#Landfill expansion(Kul-Tiras expansion root)
+	wwu_mechagnome_kul_1 = { 
+		icon = mission_engineering
+        position = 3
+		required_missions = { wwu_mechagnome_kul_0 }
+		trigger = { 
+			#Control all provinsens
+		}
+		effect = 
+			{
+			 #Claim Boralus
+			}
+	}
+	#King of Jaw City(Kul-Tiras expansion root)
+	wwu_mechagnome_king_jaw_city = { 
+		icon = mission_engineering
+        position = 4
+		required_missions = { wwu_mechagnome_kul_1 }
+		trigger = { 
+			#Control Boralus
+		}
+		effect = 
+			{
+			 #Boralus change religion Mechagon
+			 #All Kul-Tiras claim
+			}
+	}
+	#King Gnomes (Gnomeregan Root)
+	wwu_mechagnome_king_gnomes = { 
+		icon = mission_engineering
+        position = 4
+		required_missions = { AND = {
+										wwu_arcf_1
+										wwu_mechagnome_kolonial_2
+									}
+							}
+		trigger = { 
+			#Control Gnomeregan
+			#Gnomeregan not exists
+		}
+		effect = 
+			{
+			 add_prestige = 40
+			 add_stability = 1
+			 add_mil_power = 150
+			 add_dip_power = 150
+			 set_government_rank = 3
+			 #Gnomeregan culture changed
+			 
+			}
+	}
+}
+
+#Column_5(Colonial Root)
+wwu_arcforge_column_5 = 
+{
+	slot = 5
+	generic = no
+	ai = yes
+    has_country_shield = yes
+	potential = {
+		tag = ARF
+	} 
+	#Research Expedition (Colonial Root)
+	wwu_mechagnome_kolonial_0 = { 
+		icon = mission_engineering
+        position = 2
+		required_missions = { wwu_mechagnome_island }	
+		trigger = { 
+			adm_tech = 4
+		}
+		effect = 
+			{
+			 add_country_modifier = {
+				name = "mission_mech_colonist"
+				duration = 10
+			}
+			}
+	}
+	#Mechagon for mechagnomes (Colonial Root)
+	wwu_mechagnome_kolonial_1 = {	
+		icon = mission_engineering
+        position = 3
+		required_missions = { wwu_mechagnome_kolonial_0 }	
+		trigger = { 
+			#All provinsens Mechagon is Arcforge
+		}
+		effect = {
+			#This colonial +1 +1 +1
+			}
+	}
+	#Return Home (Colonial Root)
+	wwu_mechagnome_kolonial_2 = {
+		icon = mission_engineering
+        position = 4
+		required_missions = { wwu_mechagnome_kolonial_0 }	
+		trigger = { 
+			#All colonial provinsens near Gnomeregan
+		}
+		effect = {
+			#Gnomeregan claims
+		}
+	}
 }
