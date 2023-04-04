@@ -95,7 +95,9 @@ wwu_arcforge_column_2 =
 		required_missions = { wwu_ready_to_mechanization }
 		trigger = 
 		{
-			#Machagon has 30 development
+			247 = {
+			total_development = 35
+			}
 		}
 		effect = 
 		{
@@ -113,7 +115,7 @@ wwu_arcforge_column_2 =
 		required_missions = { wwu_building_mechagon }
 		trigger = 
 		{
-			#Machagon has 20 artillery
+			num_of_artillery = 20
 		}
 		effect = 
 		{
@@ -193,7 +195,9 @@ wwu_arcforge_column_4 =
 		}
 		effect = 
 			{
-			 #Claim all island
+			 area_vigil_hill = {
+				add_permanent_claim = ROOT
+				}
 			}
 	}
 	#Landfill expansion(Kul-Tiras expansion root)
@@ -202,11 +206,16 @@ wwu_arcforge_column_4 =
         position = 3
 		required_missions = { wwu_mechagnome_kul_0 }
 		trigger = { 
-			#Control all provinsens
+			area_vigil_hill = {
+				type = all
+                owned_by = ROOT
+			}
 		}
 		effect = 
 			{
-			 #Claim Boralus
+			area_boralus = {
+                add_permanent_claim = ROOT
+            }
 			}
 	}
 	#King of Jaw City(Kul-Tiras expansion root)
@@ -215,12 +224,20 @@ wwu_arcforge_column_4 =
         position = 4
 		required_missions = { wwu_mechagnome_kul_1 }
 		trigger = { 
-			#Control Boralus
+			area_boralus = {
+				type = all
+                owned_by = ROOT
+			}
 		}
 		effect = 
 			{
-			 #Boralus change religion Mechagon
-			 #All Kul-Tiras claim
+			 area_boralus = {
+				type = all
+				change_religion = technomancy
+			 }
+			 region_kul_tiras = {
+				add_permanent_claim = ROOT				
+			 }
 			}
 	}
 	#King Gnomes (Gnomeregan Root)
@@ -233,8 +250,11 @@ wwu_arcforge_column_4 =
 									}
 							}
 		trigger = { 
-			#Control Gnomeregan
-			#Gnomeregan not exists
+			area_gnomeregan = {
+				type = all
+                owned_by = ROOT
+			}
+			NOT = {exists = A32}
 		}
 		effect = 
 			{
@@ -243,7 +263,10 @@ wwu_arcforge_column_4 =
 			 add_mil_power = 150
 			 add_dip_power = 150
 			 set_government_rank = 3
-			 #Gnomeregan culture changed
+			 area_gnomeregan = {
+				type = all
+				change_culture = ARF
+			 }
 			 
 			}
 	}
@@ -281,10 +304,18 @@ wwu_arcforge_column_5 =
         position = 3
 		required_missions = { wwu_mechagnome_kolonial_0 }	
 		trigger = { 
-			#All provinsens Mechagon is Arcforge
+			region_mechagon = {
+				type = all
+				owned_by = ROOT
+			}
 		}
 		effect = {
-			#This colonial +1 +1 +1
+			area_western_spray = {
+				type = all
+				add_base_tax = 1
+				add_base_production	 = 1
+				add_base_manpower = 1
+			}
 			}
 	}
 	#Return Home (Colonial Root)
@@ -293,10 +324,13 @@ wwu_arcforge_column_5 =
         position = 4
 		required_missions = { wwu_mechagnome_kolonial_0 }	
 		trigger = { 
-			#All colonial provinsens near Gnomeregan
+			1748 = { owned_by = ROOT }
+			1006 = { owned_by = ROOT }
 		}
 		effect = {
-			#Gnomeregan claims
+			area_gnomeregan = {
+				add_permanent_claim = ROOT				
+			}
 		}
 	}
 }

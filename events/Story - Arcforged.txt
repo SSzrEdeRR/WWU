@@ -65,3 +65,35 @@ country_event = {
 		switch_tag = RBR
 	}
 }
+
+country_event = {
+	id = wwu_arcgorged.2
+	title = wwu_arcgorged.2.title
+	desc = wwu_arcgorged.2.desc
+	picture = GNOMEREGAN_eventPicture
+
+    is_triggered_only = yes
+    
+	option = {
+		name = wwu_arcgorged.2.a
+		add_stability = 1
+		}
+}
+
+country_event = {
+	id = wwu_arcgorged.3
+	title = wwu_arcgorged.3.title
+	desc = wwu_arcgorged.3.desc
+	picture = GNOMEREGAN_eventPicture
+
+    is_triggered_only = yes
+    
+	option = {
+		name = wwu_arcgorged.2.a
+		add_country_modifier = {
+				name = "mission_mech_fail_mech"
+				duration = -1
+			}
+		}
+
+}
