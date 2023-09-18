@@ -101,7 +101,7 @@ wwu_dynastic_ideas = {
     }
     # Diplomatic Preasure
     wwu_dynastic_ideas_7 = {
-        accept_vassalization_reasons = 10
+        accept_vassalization_reasons = 15
     }
     
     ai_will_do = {
